@@ -23,7 +23,7 @@ namespace AtletikaiVerseny
         {
             foreach (var item in Atletak)
             {
-                Console.WriteLine($"{item.VezNev,10} {item.KezNev,0} \t {item.Ugras}");
+                Console.WriteLine($"{item.VezNev,10} {item.KezNev,-10} \t {item.Ugras}");
             }
         }
         static void egye()
