@@ -54,6 +54,24 @@ namespace AtletikaiVerseny
             Console.WriteLine($"{Atletak[id].Nev()}: {Atletak[id].Ugras} cm");
 
         }
+        static int atl()
+        {
+            double atl = 0;
+            foreach (var item in Atletak)
+            {
+                atl += item.Ugras;
+            }
+            atl = atl / Atletak.Count;
+            int alatt = 0;
+            foreach (var item in Atletak)
+            {
+                if (item.Ugras<atl)
+                {
+                    alatt++;
+                }
+            }
+            return alatt;
+        }
         static void ir()
         {
             StreamWriter ir = new StreamWriter("versenyzok.txt");
@@ -73,7 +91,8 @@ namespace AtletikaiVerseny
             egye();
             Console.WriteLine("\n4. feladat: Legnagyobb ugrás:");
             nagy();
-            Console.WriteLine("\n5. feladat: Adatok fájlba írása");
+            Console.WriteLine("\n5. feladat: Átlag alatt lévő ugrások száma: {0}",atl());
+            Console.WriteLine("\n6. feladat: Adatok fájlba írása");
             ir();
             Console.ReadKey();
         }
